@@ -44,8 +44,10 @@ For local project installation, you will need:
 
 ## 1. Installation
 1. Clone the repository
-```git clone github.com/yourreponame```
-2. Frontend folder
+```
+git clone github.com/yourreponame
+```
+3. Frontend folder
 ```
 make install
 ```
