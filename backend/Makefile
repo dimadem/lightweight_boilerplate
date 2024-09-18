@@ -26,22 +26,19 @@ setup_env: .env
         cp .env.example .env && echo "$(GREEN)✅ .env created$(NC)"; \
 	fi
 
-# Create virtual environment
+		# Create virtual environment
 create_venv: .venv
 
 .venv:
 	@echo "$(GRAY)Creating virtual environment .venv$(NC)"
-	if [ -d ".venv" ]; then \
-        echo "$(RED)❗️ .venv already exists$(NC)"; \
-	else \
-        python -m venv .venv && echo "$(GREEN)✅ .venv created$(NC)"; \
-    fi
+	python3 -m venv .venv 
+	@echo "$(GREEN)✅ .venv created$(NC)"
 
 # Install dependencies
 install_deps: .venv
 	@echo "$(GRAY)Installing required packages$(NC)"
-	@source .venv/bin/activate && echo "$(GREEN)✅ Virtual environment activated$(NC)"
-	@pip install -r requirements.txt && echo "$(GREEN)✅ Packages installed from requirements.txt$(NC)"
+	. .venv/bin/activate && pip install -r requirements.txt 
+	@echo "$(GREEN)✅ Packages installed from requirements.txt$(NC)"
 
 # Complete project setup
 setup: check_python setup_env create_venv install_deps
@@ -50,7 +47,7 @@ setup: check_python setup_env create_venv install_deps
 
 dev:
 	@echo "$(GRAY)Starting development server$(NC)"
-	@source .venv/bin/activate && fastapi dev ./app/main.py
+	. .venv/bin/activate && fastapi dev ./app/main.py
 	@echo "$(GREEN)✅ Development server started$(NC)"
 
 ## Docker Commands
@@ -69,7 +66,7 @@ run_docker:
 # Push Docker container to DockerHub
 push_docker:
 	@echo "$(GRAY)Pushing Docker container to DockerHub$(NC)"
-	sudo docker push $(USERNAME)/$(REPO):latest
+	docker push $(USERNAME)/$(REPO):latest
 	@echo "$(GREEN)✅ Docker container pushed to DockerHub$(NC)"
 
 ## Utility Commands
