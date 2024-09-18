@@ -4,8 +4,14 @@ GREEN = \033[0;32m
 GRAY = \033[0;30m
 NC = \033[0m
 
+# Setup .env file
+env:
+	@echo "$(GRAY)Setting up .env file$(NC)"
+	cp .env.example .env.local
+	@echo "$(GREEN)✅ .env file setup complete$(NC)"
+
 # Install npm dependencies
-install:
+install: env
 	@echo "$(GRAY)Installing npm packages$(NC)"
 	npm install
 	@echo "$(GREEN)✅ npm packages installed$(NC)"
@@ -22,6 +28,7 @@ build: install
 	npm run build
 	@echo "$(GREEN)✅ Project build complete$(NC)"
 
+
 ## Utility Commands
 
 updates:
@@ -34,3 +41,6 @@ clean:
 	@echo "$(GRAY)Cleaning temporary files and directories$(NC)"
 	rm -rf .next node_modules
 	@echo "$(GREEN)✅ Clean complete$(NC)"
+
+# Main targets
+.PHONY: env install dev build updates clean

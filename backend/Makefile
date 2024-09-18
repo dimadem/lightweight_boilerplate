@@ -7,9 +7,6 @@ GREEN = \033[0;32m
 GRAY = \033[0;30m
 NC = \033[0m
 
-# Main targets
-.PHONY: all check_python setup_env create_venv install_deps build_docker run_docker clean
-
 ## Setup and Configuration Commands
 
 # Check if Python is installed
@@ -51,6 +48,11 @@ setup: check_python setup_env create_venv install_deps
 	@echo "$(GRAY)\n--- --- --- --- ---\n$(NC)"
 	@echo "$(GREEN)✅ Setup complete\n$(NC)"
 
+dev:
+	@echo "$(GRAY)Starting development server$(NC)"
+	@source .venv/bin/activate && fastapi dev ./app/main.py
+	@echo "$(GREEN)✅ Development server started$(NC)"
+
 ## Docker Commands
 
 # Build Docker container
@@ -71,3 +73,7 @@ clean:
 	@echo "$(GRAY)Cleaning temporary files and directories$(NC)"
 	rm -rf .venv .env
 	@echo "$(GREEN)✅ Clean complete$(NC)"
+
+
+# Main targets
+.PHONY: all check_python setup_env create_venv install_deps build_docker run_docker clean
