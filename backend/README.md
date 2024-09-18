@@ -81,9 +81,6 @@ To deploy a container to a cloud server, you will need:
 ```
 USERNAME=UserNameDockerHub
 REPO=RepositoryNameDockerHub
-TAG=v1
-TELEGRAM_BOT_TOKEN=1235
-OPENAI_API_KEY=1234
 ```
 1. Make sure your ANTHROPIC_API_KEY in .env
 2. Build the image for Linux
