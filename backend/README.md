@@ -50,3 +50,70 @@ API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
 ```
 docker run -d -p 8000:8000 -e ANTHROPIC_API_KEY=YOUR_API_KEY ContainerID
 ```
+
+# Development on a Cloud Server
+
+For remote development, you will need:
+
+- Server Access (ssh user@ip & password || SSH key)
+- Visual Studio Code
+
+Pre-installed software on the server:
+
+- vim
+- build-essential
+- python3
+- python3-venv
+- docker-ce
+- docker-ce-cli
+- docker-buildx-plugin
+- docker-compose-plugin
+
+---
+
+# Running Docker Container
+
+To deploy a container to a cloud server, you will need:
+
+- Downloaded [Docker](https://www.docker.com/products/docker-desktop/) program
+- Account on [DockerHub](https://hub.docker.com/)
+- [Create a repository](https://docs.docker.com/docker-hub/repos/create/)
+- Anthropic API token
+- Linux or MacOS operating system
+
+1. Make sure your ANTHROPIC_API_KEY in .env
+2. Build the image for Linux
+```
+make build
+```
+3. Run the container with the application
+```
+make docker_run
+```
+4. Also, you can publish the image on DockerHub
+```
+make push
+```
+
+---
+
+## Downloading and Running the Published Image
+0. Log into the server
+```
+ssh -i PATH_TO_YOUR_KEY.pem ubuntu@SERVER_IP_ADDRESS
+```
+1. Find the published image on DockerHub:
+```
+docker search username/projectname
+```
+2. Download the image:
+```
+docker pull username/projectname:v1
+```
+3. Run the container with Telegram bot and OpenAI API tokens:
+```
+sudo docker run -d -p 8000:8000 -e ANTHROPIC_API_KEY=YOUR_API_KEY ContainerID
+```
+
+# DONE
+--- --- --- 
