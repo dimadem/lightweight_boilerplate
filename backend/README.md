@@ -47,10 +47,6 @@ Serving at: [http://localhost:8000](http://localhost:8000)
 
 API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
 
-```
-docker run -d -p 8000:8000 -e ANTHROPIC_API_KEY=YOUR_API_KEY ContainerID
-```
-
 # Development on a Cloud Server
 
 For remote development, you will need:
@@ -81,37 +77,45 @@ To deploy a container to a cloud server, you will need:
 - Anthropic API token
 - Linux or MacOS operating system
 
+0. In the `Makefile`, add **USERNAME** and **REPO** to the existing tokens:
+```
+USERNAME=UserNameDockerHub
+REPO=RepositoryNameDockerHub
+TAG=v1
+TELEGRAM_BOT_TOKEN=1235
+OPENAI_API_KEY=1234
+```
 1. Make sure your ANTHROPIC_API_KEY in .env
 2. Build the image for Linux
-```
-make build
+```bash
+make build_docker
 ```
 3. Run the container with the application
-```
-make docker_run
+```bash
+make run_docker
 ```
 4. Also, you can publish the image on DockerHub
-```
-make push
+```bash
+make push_docker
 ```
 
 ---
 
 ## Downloading and Running the Published Image
 0. Log into the server
-```
+```bash
 ssh -i PATH_TO_YOUR_KEY.pem ubuntu@SERVER_IP_ADDRESS
 ```
 1. Find the published image on DockerHub:
-```
+```bash
 docker search username/projectname
 ```
 2. Download the image:
-```
+```bash
 docker pull username/projectname:v1
 ```
 3. Run the container with Telegram bot and OpenAI API tokens:
-```
+```bash
 sudo docker run -d -p 8000:8000 -e ANTHROPIC_API_KEY=YOUR_API_KEY ContainerID
 ```
 

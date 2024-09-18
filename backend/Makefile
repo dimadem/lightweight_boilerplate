@@ -1,5 +1,5 @@
-DOCKERHUB_USERNAME = iamdimadem
-DOCKERHUB_REPO = lightweight-boilerplate
+USERNAME = YOUR_DOCKERHUB_USERNAME
+REPO = YOUR_DOCKERHUB_REPO_NAME
 
 # Colors for output
 RED = \033[0;31m
@@ -58,13 +58,19 @@ dev:
 # Build Docker container
 build_docker:
 	@echo "$(GRAY)Building Docker container$(NC)"
-	docker build -t $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPO):latest .
+	sudo docker build --platform linux/amd64 -t $(USERNAME)/$(REPO):latest .
 	@echo "$(GREEN)✅ Docker container builded$(NC)"
 
 # Run Docker container locally
 run_docker:
 	@echo "$(GRAY)Running Docker container locally$(NC)"
-	docker run --rm -it --env-file .env $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPO):latest
+	sudo docker run --rm -it --env-file .env $(USERNAME)/$(REPO):latest
+	
+# Push Docker container to DockerHub
+push_docker:
+	@echo "$(GRAY)Pushing Docker container to DockerHub$(NC)"
+	sudo docker push $(USERNAME)/$(REPO):latest
+	@echo "$(GREEN)✅ Docker container pushed to DockerHub$(NC)"
 
 ## Utility Commands
 
