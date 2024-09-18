@@ -24,6 +24,11 @@ It's a starting point includes basic structure and essential components.
 - [FastAPI](https://fastapi.tiangolo.com/):         Modern, fast (high-performance) Python web framework
 - [Anthropic](https://docs.anthropic.com/en/home):       AI integration for advanced natural language processing
 
+# Creating a Repository
+1. Click the USE THIS TEMPLATE button in the top right
+2. Name your project
+3. The content in the repository will be used for the hackathon
+
 # Structure
 ```
 root/
@@ -66,8 +71,3 @@ root/
 ├── LICENSE
 └── README.md
 ```
-
-# Creating a Repository
-1. Click the USE THIS TEMPLATE button in the top right
-2. Name your project
-3. The content in the repository will be used for the hackathon
