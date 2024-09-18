@@ -66,3 +66,8 @@ root/
 ├── LICENSE
 └── README.md
 ```
+
+# Creating a Repository
+1. Click the USE THIS TEMPLATE button in the top right
+2. Name your project
+3. The content in the repository will be used for the hackathon
