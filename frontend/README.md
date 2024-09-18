@@ -41,12 +41,15 @@ root/
 These commands help automate common tasks related to building and maintaining the frontend application.
 
 `make install`: Install npm dependencies required for the project.
+
 `make dev`: Install dependencies and start the development server.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 `make build`: Install dependencies and build the project for production.
+
 `make updates`: Check for updates to npm packages and updates them if necessary.
+
 `make clean`: Clean up temporary files and directories, such as .next and node_modules.
 
 ## Deployment
