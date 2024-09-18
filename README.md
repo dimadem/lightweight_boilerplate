@@ -25,9 +25,55 @@ It's a starting point includes basic structure and essential components.
 - [Anthropic](https://docs.anthropic.com/en/home):       AI integration for advanced natural language processing
 
 # Creating a Repository
-1. Click the USE THIS TEMPLATE button in the top right
+1. Click the <b>USE THIS TEMPLATE</b> button in the top right
 2. Name your project
 3. The content in the repository will be used for the hackathon
+
+# LOCAL usage
+
+For local project installation, you will need:
+- [Anthropic API token](https://console.anthropic.com/dashboard)
+
+### Your computer
+- [Python](https://www.python.org/)
+- [Node.js](https://nodejs.org/en)
+- Linux or MacOS operating system
+
+### Codespaces
+- At GitHub repository -> Code -> Create codespace on main
+
+## 1. Installation
+1. Clone the repository
+```git clone github.com/yourreponame```
+2. Frontend folder
+```
+make install
+```
+3. Backend folder
+```
+make setup
+```
+3.1 Paste API KEY to .env file
+```
+ANTHROPIC_API_KEY=YOUR_API_KEY
+```
+## 2. Run the full-stack boilerplate
+1. frontend
+```
+cd ./frontend/
+make dev
+```
+2. backend
+```
+cd ./backend/
+make dev
+```
+
+## DONE
+
+For deployment -> take a look at Frontend [README.md](frontend/README.md) & Backend [README.md](backend/README.md)
+
+---
 
 # Structure
 ```
