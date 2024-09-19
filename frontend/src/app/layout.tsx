@@ -28,16 +28,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased grid h-screen w-full pl-[56px]`}>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AppProvider>
-          <Navbar />
-          <div className="flex flex-col z-0">
-            <header className="sticky top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
-              <h1 className="text-xl font-semibold">boilerplate</h1>
-            </header>
-            <main className="flex-grow overflow-auto">
-              {children}
-            </main>
+          <div className="grid h-screen w-full pl-[56px]">
+            <Navbar />
+            <div className="flex flex-col z-0">
+              <header className="sticky top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
+                <h1 className="text-xl font-semibold">boilerplate</h1>
+              </header>
+              <main className="flex-grow overflow-auto">
+                {children}
+              </main>
+            </div>
           </div>
         </AppProvider>
       </body>
