@@ -111,7 +111,7 @@ docker search username/projectname
 ```bash
 docker pull username/projectname:v1
 ```
-3. Run the container with Telegram bot and OpenAI API tokens:
+3. Run the container with Backend and ANTHROPIC API tokens:
 ```bash
 sudo docker run -d -p 8000:8000 -e ANTHROPIC_API_KEY=YOUR_API_KEY ContainerID
 ```
