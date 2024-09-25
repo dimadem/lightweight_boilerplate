@@ -29,11 +29,15 @@ setup_env: .env
 		# Create virtual environment
 create_venv: .venv
 
-.venv:
+install_deps:
+	@echo "$(GRAY)update && upgrade Ubuntu$(NC)"
+	sudo apt update && sudo apt upgrade
 	@echo "$(GRAY)Install python3-pip package$(NC)"
 	sudo apt install python3-pip
 	@echo "$(GRAY)Install .venv package$(NC)"
 	sudo apt install -y python3-venv
+
+.venv:
 	@echo "$(GRAY)Creating virtual environment .venv$(NC)"
 	python3 -m venv .venv 
 	@echo "$(GREEN)✅ .venv created$(NC)"
