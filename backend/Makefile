@@ -26,10 +26,10 @@ setup_env: .env
         cp .env.example .env && echo "$(GREEN)✅ .env created$(NC)"; \
 	fi
 
-		# Create virtual environment
-create_venv: .venv
+# Create virtual environment
+create_venv: update_upgrade_ubuntu .venv
 
-install_deps:
+update_upgrade_ubuntu:
 	@echo "$(GRAY)update && upgrade Ubuntu$(NC)"
 	sudo apt update && sudo apt upgrade
 	@echo "$(GRAY)Install python3-pip package$(NC)"
@@ -87,4 +87,4 @@ clean:
 
 
 # Main targets
-.PHONY: all check_python setup_env create_venv install_deps build_docker run_docker clean
+.PHONY: all check_python setup_env create_venv install_dep update_upgrade_ubuntu build_docker run_docker clean
