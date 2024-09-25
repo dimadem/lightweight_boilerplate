@@ -58,9 +58,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 2. Go to -> [vercel](https://vercel.com/login) -> log in with GitHub (then it show all your repositories ready for deploy)
 3. Click -> <b>Add New...</b> -> <b>Project</b> -> Import Git Repository
 4. Configure Project -> Root Directory -> CLick <b>Edit</b> -> Choose frontend folder (with Next logo) -> Continue
-5. Click <b>Deploy</b>
-6. If there no issues with project, you will see link for your project!
-7. If there issues -> <b>Build Logs</b> -> Read them -> Debug!
+5. Add to environment variables -> server ip address
+6. Click <b>Deploy</b>
+7. If there no issues with project, you will see link for your project!
+8. If there issues -> <b>Build Logs</b> -> Read them -> Debug!
 
 ## CI/CD
 
