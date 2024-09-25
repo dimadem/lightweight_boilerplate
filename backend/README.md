@@ -76,6 +76,8 @@ To deploy a container to a cloud server, you will need:
 - [Create a repository](https://docs.docker.com/docker-hub/repos/create/)
 - Anthropic API token
 - Linux or MacOS operating system
+- If you in codespaces -> logout from docker `docker logout`
+- Login to Docker with your credentials `docker login`
 
 0. In the `Makefile`, add **USERNAME** and **REPO** to the existing tokens:
 ```

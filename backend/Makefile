@@ -1,5 +1,5 @@
-USERNAME = YOUR_DOCKERHUB_USERNAME
-REPO = YOUR_DOCKERHUB_REPO_NAME
+USERNAME = iamdimadem
+REPO = fullstack
 
 # Colors for output
 RED = \033[0;31m
@@ -12,7 +12,7 @@ NC = \033[0m
 # Check if Python is installed
 check_python:
 	@echo "$(GRAY)Checking if Python is installed$(NC)"
-	@command -v python >/dev/null 2>&1 || (echo "$(RED)❗️ Python is not installed$(NC)" && exit 1)
+	@command -v python3 >/dev/null 2>&1 || (echo "$(RED)❗️ Python is not installed$(NC)" && exit 1)
 	@echo "$(GREEN)✅ Python is installed$(NC)"
 
 # Setup .env file
@@ -30,6 +30,10 @@ setup_env: .env
 create_venv: .venv
 
 .venv:
+	@echo "$(GRAY)Install python3-pip package$(NC)"
+	sudo apt install python3-pip
+	@echo "$(GRAY)Install .venv package$(NC)"
+	sudo apt install -y python3-venv
 	@echo "$(GRAY)Creating virtual environment .venv$(NC)"
 	python3 -m venv .venv 
 	@echo "$(GREEN)✅ .venv created$(NC)"
