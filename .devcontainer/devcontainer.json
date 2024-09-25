@@ -1,6 +1,6 @@
 {
   "name": "FullStack Boilerplate",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/ubuntu:latest",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "lts"
