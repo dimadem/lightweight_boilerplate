@@ -5,9 +5,7 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "lts"
     },
-    "ghcr.io/devcontainers/features/docker-in-docker:1": {
-      "version": "lts"
-    }
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
   },
   "customizations": {
     "vscode": {
@@ -31,5 +29,4 @@
     }
   },
   "forwardPorts": [3000, 8000],
-  "postCreateCommand": "./devcontainer/setup.sh"
 }
