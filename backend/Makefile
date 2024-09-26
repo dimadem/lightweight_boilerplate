@@ -1,5 +1,5 @@
-USERNAME = iamdimadem
-REPO = fullstack
+USERNAME = DOCKERHUB_USERNAME
+REPO = DOCKERHUB_REPO
 
 # Colors for output
 RED = \033[0;31m
